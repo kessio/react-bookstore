@@ -1,12 +1,12 @@
 import React from 'react';
 import {
-    BrowserRouter as Router, Routes, Route, Link,
-  } from 'react-router-dom';
+  BrowserRouter as Router, Routes, Route, Link,
+} from 'react-router-dom';
 import Books from './Books';
 import Categories from './Categories';
 
 const Navbar = () => (
-    <Router>
+  <Router>
     <nav className="nav">
       <Link className="logo" to="/">BookStore CMS</Link>
       <div className="navItems">
