@@ -4,11 +4,10 @@ function AddBookForm() {
   return (
     <div>
       Add Book
-
       <form>
-        <input />
+        <input type="text" placeholder="Title" />
+        <input type="text" placeholder="Author" />
       </form>
-
     </div>
   );
 }

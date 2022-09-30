@@ -1,5 +1,6 @@
 /* eslint-disable */
 import React, { useState } from 'react';
+import AddBookForm from './AddBookForm';
 import Book from './Book';
 
 const Books = () => {
@@ -25,7 +26,7 @@ const Books = () => {
       {books.map((book) => (
         <Book key = {book.id} title = {book.title} author = {book.author} />
       ))}
-
+       <AddBookForm addBook = { addBook }/>
     </div>
   )
 }
