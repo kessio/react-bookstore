@@ -1,15 +1,33 @@
-import React from 'react';
+/* eslint-disable */
+import React, { useState } from 'react';
+import Book from './Book';
 
-export default function Books() {
+const Books = () => {
+  const [books, addBook] = useState([
+    {
+      id: 1,
+      title: 'The Great Gatsby',
+      author: 'F. Scott Fitzgerald',
+    },
+    {
+      id: 2,
+      title: 'Animal Farm',
+      author: 'George Orwell',
+    },
+    {
+      id: 3,
+      title: 'Jane Eyre',
+      author: 'Charlotte Brontë',
+    },
+  ]);
   return (
+    <div>
+      {books.map((book) => (
+        <Book key = {book.id} book = {book} />
+      ))}
 
-    <div className="pt-5 container">
-      <h3>List of books</h3>
-      <button className="btn-dark btn-small rounded" type="button">Remove book</button>
-      <div className="d-flex pt-5">
-        <input type="text" placeholder="Add your book" />
-      </div>
     </div>
-
-  );
+  )
 }
+
+export default Books

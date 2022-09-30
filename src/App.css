@@ -6,6 +6,7 @@
   display: flex;
   justify-content: space-between;
   margin-top: 20px;
+  border-bottom: 1px solid rgb(213, 201, 201);
 }
 
 .logo {
@@ -19,6 +20,7 @@
 .navItems {
   display: flex;
   justify-content: flex-end;
+  padding-bottom: 5px;
 }
 
 .linkItem {
