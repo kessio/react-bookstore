@@ -4,7 +4,9 @@ import AddBookForm from './AddBookForm';
 import Book from './Book';
 
 const Books = () => {
-  const [books, addBook] = useState([
+  const [newBook, setNewBook] = useState('');
+  const [newAuthor, setNewAuthor] = useState('');
+  const [books, setAddedBooks] = useState([
     {
       id: 1,
       title: 'The Great Gatsby',
@@ -21,12 +23,29 @@ const Books = () => {
       author: 'Charlotte Brontë',
     },
   ]);
+  
+  const newBooks = () => {
+    const bookItem = {
+      id: Math.floor(Math.random() * 1000),
+      title: newBook,
+      author: newAuthor,
+    };
+
+    if (!newBook || !newAuthor) {
+      alert('Book or Author can not be blank!');
+      return;
+    } 
+      setAddedBooks((oldBooks) => [...oldBooks, bookItem]);
+      setNewBook("");
+    
+  };
+
   return (
     <div>
       {books.map((book) => (
         <Book key = {book.id} title = {book.title} author = {book.author} />
       ))}
-       <AddBookForm addBook = { addBook }/>
+       <AddBookForm newBook = { newBook } setNewBook = { setNewBook } newAuthor = { newAuthor } setNewAuthor = { setNewAuthor }  newBooks = { newBooks } />
     </div>
   )
 }
