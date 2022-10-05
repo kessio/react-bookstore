@@ -39,11 +39,15 @@ const Books = () => {
       setNewBook("");
     
   };
+  const deleteItem = (id) => {
+    const newArray = books.filter((book) => book.id !== id);
+    setAddedBooks(newArray);
+  }
 
   return (
     <div>
       {books.map((book) => (
-        <Book key = {book.id} title = {book.title} author = {book.author} />
+        <Book key = {book.id} id={ book.id } title = {book.title} author = {book.author} deleteItem = {deleteItem}/>
       ))}
        <AddBookForm newBook = { newBook } setNewBook = { setNewBook } newAuthor = { newAuthor } setNewAuthor = { setNewAuthor }  newBooks = { newBooks } />
     </div>
