@@ -8,11 +8,11 @@ export default function Categories() {
 
   return (
     <div>
-     <h1>{theStatus}</h1>
+      <h1>{theStatus}</h1>
       <button
         type="button"
         onClick={() => {
-          dispatch(checkStatus())
+          dispatch(checkStatus());
         }}
       >
         Check status
