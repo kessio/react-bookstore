@@ -1,32 +1,17 @@
 /* eslint-disable */
-import React, { useState } from 'react';
+import React from 'react';
 import AddBookForm from './AddBookForm';
 import Book from './Book';
+import { useSelector } from 'react-redux';
 
 const Books = () => {
-  const [books, addBook] = useState([
-    {
-      id: 1,
-      title: 'The Great Gatsby',
-      author: 'F. Scott Fitzgerald',
-    },
-    {
-      id: 2,
-      title: 'Animal Farm',
-      author: 'George Orwell',
-    },
-    {
-      id: 3,
-      title: 'Jane Eyre',
-      author: 'Charlotte Brontë',
-    },
-  ]);
+  const books = useSelector((state) => state.books.value);
   return (
     <div>
       {books.map((book) => (
         <Book key = {book.id} title = {book.title} author = {book.author} />
       ))}
-       <AddBookForm addBook = { addBook }/>
+       <AddBookForm />
     </div>
   )
 }
