@@ -3,7 +3,6 @@ import React, { useState } from 'react';
 import AddBookForm from './AddBookForm';
 import Book from './Book';
 import { useSelector } from 'react-redux';
-
   const Books = () => {
   const books = useSelector((state) => state.books.value);
 
