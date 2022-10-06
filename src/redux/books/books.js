@@ -1,4 +1,26 @@
-const ADD_BOOK = 'REACT-BOOKSTORE/src/redux/books/ADD_BOOK';
+import { createSlice } from "@reduxjs/toolkit";
+import books from './booksData';
+
+export const booksSlice = createSlice ({
+  name: "books",
+  initialState: {value: books},
+  reducers: {
+    addBook: (state, action) => {
+      state.value.push(action.payload);
+    },
+    deleteBook: (state, action) => {
+      state.value = state.value.filter(book => book.id !== action.payload.id)
+    }
+  }
+})
+
+export const { addBook, deleteBook } = booksSlice.actions;
+export default booksSlice.reducer;
+
+
+
+
+/*const ADD_BOOK = 'REACT-BOOKSTORE/src/redux/books/ADD_BOOK';
 const REMOVE_BOOK = 'REACT-BOOKSTORE/src/redux/books/REMOVE_BOOK';
 
 const addBookAction = (book) => ({
@@ -25,3 +47,4 @@ const bookActionReducer = (state = [], action) => {
 };
 
 export default { bookActionReducer, addBookAction, removeBookAction };
+*/
