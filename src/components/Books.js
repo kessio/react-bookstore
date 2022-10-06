@@ -9,26 +9,7 @@ import { useSelector } from 'react-redux';
 
   const [title, setTitle] = useState('');
   const [author, setAuthor] = useState('');
- /* const [newBook, setNewBook] = useState('');
-  const [newAuthor, setNewAuthor] = useState('');
-
-  const newBooks = () => {
-    const bookItem = {
-      id: Math.floor(Math.random() * 1000),
-      title: newBook,
-      author: newAuthor,
-    };
-
-    if (!newBook || !newAuthor) {
-      alert('Book or Author can not be blank!');
-      return;
-    } 
-      setAddedBooks((oldBooks) => [...oldBooks, bookItem]);
-      setNewBook("");
-    
-  };
-  */
-
+ 
   return (
     <div>
       {books.map((book) => (
