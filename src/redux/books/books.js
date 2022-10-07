@@ -6,18 +6,6 @@ import axios from './axios';
 // apiid = QE7cLHhy2wV1igTE5bSE
 const api = 'https://us-central1-bookstore-api-e63c8.cloudfunctions.net/bookstoreApi/apps/QE7cLHhy2wV1igTE5bSE/books';
 
-export const removeBook = createAsyncThunk(
-  'book/removeBook',
-  async (bookId) => {
-    try {
-      const revBook = await axios.delete(`${api}/${bookId}`);
-      return revBook.data;
-    } catch (error) {
-      return error?.response;
-    }
-  },
-);
-
 export const fetchBooks = createAsyncThunk(
   'book/fetchBooks',
   async () => (await axios.get(api)).data,
