@@ -1,4 +1,3 @@
-/* eslint react/forbid-prop-types: 0 */
 import React from 'react';
 import PropTypes from 'prop-types';
 import { useDispatch } from 'react-redux';
@@ -12,8 +11,9 @@ const Book = ({ title, author, id }) => {
       <p>{author}</p>
       <button
         type="button"
-        onClick={() => {
-          dispatch(deleteBook({ id }));
+        id={id}
+        onClick={(e) => {
+          dispatch(deleteBook(e.target.id));
         }}
       >
         Remove
@@ -21,10 +21,11 @@ const Book = ({ title, author, id }) => {
     </div>
   );
 };
+
 Book.propTypes = {
   title: PropTypes.string.isRequired,
   author: PropTypes.string.isRequired,
-  id: PropTypes.number.isRequired,
+  id: PropTypes.string.isRequired,
 };
 
 export default Book;
