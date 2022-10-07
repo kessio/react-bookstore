@@ -1,4 +1,7 @@
-# Getting Started with Create React App
+# react-Bookstore
+
+> This project contains a book store that posts data to a bookstore api, fetches it from the api and displays it on the UI using react redux. Users can also add and delete books to the bookstore
+
 
 #### Objectives
 - Understand the concept of state management.
