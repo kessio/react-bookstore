@@ -1,8 +1,6 @@
-/* eslint-disable */
-import { createSlice, createAsyncThunk} from '@reduxjs/toolkit';
+import { createSlice, createAsyncThunk } from '@reduxjs/toolkit';
 import axios from 'axios';
 
-// apiid = QE7cLHhy2wV1igTE5bSE
 const api = 'https://us-central1-bookstore-api-e63c8.cloudfunctions.net/bookstoreApi/apps/QE7cLHhy2wV1igTE5bSE/books';
 
 const initialState = [];
@@ -16,7 +14,7 @@ export const postBook = createAsyncThunk(
   'book/postBook',
   async (book) => (
     await axios.post(api, {
-      item_id:  Math.floor(Math.random() * 1000),
+      item_id: Math.floor(Math.random() * 1000),
       title: book.title,
       author: book.author,
       category: book.category,
@@ -25,7 +23,7 @@ export const postBook = createAsyncThunk(
 );
 
 export const deleteBook = createAsyncThunk(
-  'book/removeBook',
+  'book/deleteBook',
   async (bookId) => {
     try {
       const revBook = await axios.delete(`${api}/${bookId}`);

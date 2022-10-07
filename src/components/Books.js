@@ -13,7 +13,7 @@ import Book from './Book';
   return (
     <div>
       {books.map((book) => (
-        <Book key = {book.item_id} id={ book.item_id } title = {book.title} author = {book.author} />
+        <Book key = {book.item_id} id={book.item_id} title = {book.title} author = {book.author} />
       ))}
          <AddBookForm title={title} setTitle={setTitle} author={author} setAuthor={setAuthor} category={category} setCategory={setCategory} />
     </div>
