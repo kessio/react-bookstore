@@ -1,4 +1,3 @@
-/* eslint-disable */
 import React, { useState } from 'react';
 import PropTypes from 'prop-types'
 import AddBookForm from './AddBookForm';
@@ -17,8 +16,8 @@ import Book from './Book';
       ))}
          <AddBookForm title={title} setTitle={setTitle} author={author} setAuthor={setAuthor} category={category} setCategory={setCategory} />
     </div>
-  )
-}
+  );
+};
 
 Books.propTypes = {
   books: PropTypes.arrayOf(
