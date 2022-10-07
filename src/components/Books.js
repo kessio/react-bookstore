@@ -1,10 +1,9 @@
 import React, { useState } from 'react';
-import PropTypes from 'prop-types'
+import PropTypes from 'prop-types';
 import AddBookForm from './AddBookForm';
 import Book from './Book';
 
-  const Books = ({ books }) => {
-
+const Books = ({ books }) => {
   const [title, setTitle] = useState('');
   const [author, setAuthor] = useState('');
   const [category, setCategory] = useState('');
@@ -12,9 +11,16 @@ import Book from './Book';
   return (
     <div>
       {books.map((book) => (
-        <Book key = {book.item_id} id={book.item_id} title = {book.title} author = {book.author} />
+        <Book key={book.item_id} id={book.item_id} title={book.title} author={book.author} />
       ))}
-         <AddBookForm title={title} setTitle={setTitle} author={author} setAuthor={setAuthor} category={category} setCategory={setCategory} />
+      <AddBookForm
+        title={title}
+        setTitle={setTitle}
+        author={author}
+        setAuthor={setAuthor}
+        category={category}
+        setCategory={setCategory}
+      />
     </div>
   );
 };
@@ -28,5 +34,5 @@ Books.propTypes = {
       category: PropTypes.string,
     }),
   ).isRequired,
-}
-export default Books
+};
+export default Books;
