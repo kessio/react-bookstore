@@ -1,57 +1,22 @@
-/* eslint-disable */
 import React, { useState } from 'react';
+import { useSelector } from 'react-redux';
 import AddBookForm from './AddBookForm';
 import Book from './Book';
 
 const Books = () => {
-  const [newBook, setNewBook] = useState('');
-  const [newAuthor, setNewAuthor] = useState('');
-  const [books, setAddedBooks] = useState([
-    {
-      id: 1,
-      title: 'The Great Gatsby',
-      author: 'F. Scott Fitzgerald',
-    },
-    {
-      id: 2,
-      title: 'Animal Farm',
-      author: 'George Orwell',
-    },
-    {
-      id: 3,
-      title: 'Jane Eyre',
-      author: 'Charlotte Brontë',
-    },
-  ]);
-  
-  const newBooks = () => {
-    const bookItem = {
-      id: Math.floor(Math.random() * 1000),
-      title: newBook,
-      author: newAuthor,
-    };
+  const books = useSelector((state) => state.books.value);
 
-    if (!newBook || !newAuthor) {
-      alert('Book or Author can not be blank!');
-      return;
-    } 
-      setAddedBooks((oldBooks) => [...oldBooks, bookItem]);
-      setNewBook("");
-    
-  };
-  const deleteItem = (id) => {
-    const newArray = books.filter((book) => book.id !== id);
-    setAddedBooks(newArray);
-  }
+  const [title, setTitle] = useState('');
+  const [author, setAuthor] = useState('');
 
   return (
     <div>
       {books.map((book) => (
-        <Book key = {book.id} id={ book.id } title = {book.title} author = {book.author} deleteItem = {deleteItem}/>
+        <Book key={book.id} id={book.id} title={book.title} author={book.author} />
       ))}
-       <AddBookForm newBook = { newBook } setNewBook = { setNewBook } newAuthor = { newAuthor } setNewAuthor = { setNewAuthor }  newBooks = { newBooks } />
+      <AddBookForm title={title} setTitle={setTitle} author={author} setAuthor={setAuthor} />
     </div>
-  )
-}
+  );
+};
 
-export default Books
+export default Books;

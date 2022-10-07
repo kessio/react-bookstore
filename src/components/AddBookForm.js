@@ -1,42 +1,51 @@
 import React from 'react';
 import PropTypes from 'prop-types';
+import { useDispatch } from 'react-redux';
+import { addBook } from '../redux/books/books';
 
 function AddBookForm({
-  newBook, setNewBook, newBooks, newAuthor, setNewAuthor,
+  title, setTitle, author, setAuthor,
 }) {
-  const onSubmit = (e) => {
-    e.preventDefault();
-    newBooks();
-  };
+  const dispatch = useDispatch();
 
   return (
     <div>
       Add Book
-      <form onSubmit={onSubmit}>
+      <form>
         <input
           type="text"
           placeholder="Title"
-          value={newBook}
-          onChange={(e) => setNewBook(e.target.value)}
+          onChange={(e) => setTitle(e.target.value)}
         />
         <input
           type="text"
           placeholder="Author"
-          value={newAuthor}
-          onChange={(e) => setNewAuthor(e.target.value)}
+          onChange={(e) => setAuthor(e.target.value)}
         />
-        <button type="submit">Submit</button>
+        <button
+          type="button"
+          onClick={() => {
+            dispatch(
+              addBook({
+                id: Math.floor(Math.random() * 1000),
+                title,
+                author,
+              }),
+            );
+          }}
+        >
+          Add
+        </button>
       </form>
     </div>
   );
 }
 
 AddBookForm.propTypes = {
-  newBook: PropTypes.string.isRequired,
-  setNewBook: PropTypes.func.isRequired,
-  newBooks: PropTypes.func.isRequired,
-  newAuthor: PropTypes.string.isRequired,
-  setNewAuthor: PropTypes.func.isRequired,
+  title: PropTypes.string.isRequired,
+  setTitle: PropTypes.func.isRequired,
+  author: PropTypes.string.isRequired,
+  setAuthor: PropTypes.func.isRequired,
 };
 
 export default AddBookForm;

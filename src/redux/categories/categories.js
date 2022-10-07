@@ -1,16 +1,14 @@
-const CHECK_STATUS = 'REACT-BOOKSTORE/src/redux/categories/CHECK_STATUS';
+import { createSlice } from '@reduxjs/toolkit';
 
-// Action
-const statusAction = () => ({
-  type: CHECK_STATUS,
+export const categorySlice = createSlice({
+  name: 'checkStatus',
+  initialState: { value: 'Under Construction' },
+  reducers: {
+    checkStatus: (state, action) => { // eslint-disable-next-line
+      state.value = action.payload;
+    },
+  },
 });
-// Reducer
-const categoryActionReducer = (state = [], action) => {
-  switch (action.type) {
-    case CHECK_STATUS:
-      return 'Under construction';
-    default:
-      return state;
-  }
-};
-export default { categoryActionReducer, statusAction };
+
+export const checkStatus = categorySlice.actions;
+export default categorySlice.reducer;
