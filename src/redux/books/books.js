@@ -1,10 +1,11 @@
 /* eslint-disable */
 import { createSlice, createAsyncThunk} from '@reduxjs/toolkit';
-import { books } from './booksData';
-import axios from './axios';
+import axios from 'axios';
 
 // apiid = QE7cLHhy2wV1igTE5bSE
 const api = 'https://us-central1-bookstore-api-e63c8.cloudfunctions.net/bookstoreApi/apps/QE7cLHhy2wV1igTE5bSE/books';
+
+const initialState = [];
 
 export const fetchBooks = createAsyncThunk(
   'book/fetchBooks',
@@ -23,6 +24,17 @@ export const postBook = createAsyncThunk(
   ).data,
 );
 
+export const deleteBook = createAsyncThunk(
+  'book/removeBook',
+  async (bookId) => {
+    try {
+      const revBook = await axios.delete(`${api}/${bookId}`);
+      return revBook.data;
+    } catch (error) {
+      return error?.response;
+    }
+  },
+);
 const booksSlice = createSlice({
   name: 'book',
   initialState,
@@ -38,11 +50,10 @@ const booksSlice = createSlice({
     [postBook.fulfilled]: (state, action) => [...state, action.payload],
     [postBook.rejected]: (state, action) => action.error.message,
     /* eslint-disable */
-    [removeBook.fulfilled]: (state, action) =>
+    [deleteBook.fulfilled]: (state, action) =>
       state.filter((item) => item.item_id !== action.meta.arg),
-    [removeBook.rejected]: (state, action) => action.error.message,
+    [deleteBook.rejected]: (state, action) => action.error.message,
   },
 });
 
-export const { addBook, deleteBook } = booksSlice.actions;
 export default booksSlice.reducer;
