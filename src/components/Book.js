@@ -6,7 +6,11 @@ import { deleteBook } from '../redux/books/books';
 const Book = ({ title, author, id }) => {
   const dispatch = useDispatch();
   return (
-    <div>
+    <div className="Lesson-Panel">
+      <div>
+      <span>Action</span>
+      <span>Current Chapter</span>
+      </div>
       <h5>{title}</h5>
       <p>{author}</p>
       <button

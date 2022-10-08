@@ -12,7 +12,7 @@ const Navbar = () => (
       <Link className="logo" to="/">BookStore CMS</Link>
       <div className="navItems">
         <Link className="linkItem" to="/">Books</Link>
-        <Link className="linkItem" to="/categories">Categories</Link>
+        <Link className="linkItem cats" to="/categories">Categories</Link>
       </div>
     </nav>
 
