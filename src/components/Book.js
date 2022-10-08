@@ -3,12 +3,14 @@ import PropTypes from 'prop-types';
 import { useDispatch } from 'react-redux';
 import { deleteBook } from '../redux/books/books';
 
-const Book = ({ title, author, id }) => {
+const Book = ({
+  title, author, id, category,
+}) => {
   const dispatch = useDispatch();
   return (
     <div className="Lesson-Panel">
       <div className="headings">
-        <span className="actions">Action</span>
+        <span className="actions">{category}</span>
         <span className="chapter">CURRENT CHAPTER</span>
       </div>
       <div className="content-wrap">
@@ -64,6 +66,7 @@ Book.propTypes = {
   title: PropTypes.string.isRequired,
   author: PropTypes.string.isRequired,
   id: PropTypes.string.isRequired,
+  category: PropTypes.string.isRequired,
 };
 
 export default Book;
