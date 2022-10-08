@@ -60,7 +60,6 @@
   margin-top: 40px;
 }
 
-
 .Lesson-Panel {
   height: 10.625rem;
   margin: 2.313rem 6.25rem 0;
@@ -68,6 +67,10 @@
   border-radius: 4px;
   border: solid 1px #e8e8e8;
   background-color: #fff;
+}
+
+.Lesson-Panel:hover {
+  border:solid #0290ff 1px;
 }
 .headings {
   display: flex;
