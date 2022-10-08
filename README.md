@@ -42,7 +42,7 @@ See the section about [running tests](https://facebook.github.io/create-react-ap
 - LinkedIn: [sharon-kessio](https://www.linkedin.com/in/sharon-kessio-172220b5)
 
 ## Acknowledgements
-- Acknowledge [Emilia Andrzejewska](https://www.youtube.com/watch?v=AcUd-_Yjjqg) whose to-do list project was used to create the UI of this project
+- Acknowledge [Usman Suleiman Babakolo.](https://pedantic-beaver-cb923b.netlify.app/#/) whose bookstore project was used to create the UI of this project
 
 
 ## 🤝 Contributing

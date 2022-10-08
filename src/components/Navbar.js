@@ -5,6 +5,8 @@ import {
 } from 'react-router-dom';
 import Books from './ShowBooks';
 import Categories from './Categories';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+import { faUser } from '@fortawesome/free-solid-svg-icons'
 
 const Navbar = () => (
   <Router>
@@ -12,8 +14,9 @@ const Navbar = () => (
       <Link className="logo" to="/">BookStore CMS</Link>
       <div className="navItems">
         <Link className="linkItem" to="/">Books</Link>
-        <Link className="linkItem" to="/categories">Categories</Link>
+        <Link className="linkItem cats" to="/categories">Categories</Link>
       </div>
+      <div className="user-icon"><FontAwesomeIcon className="usericon" icon={ faUser } /></div>
     </nav>
 
     <Routes>
