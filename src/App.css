@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100;0,200;0,300;0,400;0,600;1,300;1,400;1,600;1,700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100;0,200;0,300;0,400;0,600;1,300;1,400;1,600;1,700&family=Roboto+Slab:wght@100;200;300;500;600;700&display=swap');
 .App {
   text-align: center;
 }
@@ -66,15 +66,153 @@
   border: solid 1px #e8e8e8;
   background-color: #fff;
 }
-.School-of {
+.headings {
+  display: flex;
+  justify-content: space-between;
   height: 1.125rem;
   margin: 0 2.438rem 0 0;
   opacity: 0.5;
   font-family: Montserrat;
   font-size: 0.875rem;
   font-weight: bold;
-  font-stretch: normal;
-  font-style: normal;
-  line-height: normal;
-  letter-spacing: normal;
+  padding-bottom: 0.25rem;
+}
+
+.actions {
+  height: 1.125rem;
+  margin: 0 2.438rem 0 0;
+  color: rgb(71, 69, 69);
+  font-family: Montserrat sans-serif;
+  font-size: 0.875rem;
+  font-weight: bold;
+  color: rgba(54, 52, 52, 0.05);
+}
+
+.chapter {
+  height: 1.125rem;
+  opacity: 0.5;
+  font-family: RobotoSlab sans-serif;
+  font-size: 0.813rem;
+  font-weight: 300;
+}
+
+.content-wrap {
+  display: flex;
+  justify-content: space-between;
+
+}
+
+.title {
+  margin: 0.188rem 0 0 0;
+  font-family: RobotoSlab sans-serif;
+  font-size: 1.375rem;
+  font-weight: 700;
+}
+
+.author {
+  height: 1.188rem;
+  margin: 0.25rem 0 0;
+  font-family: RobotoSlab sans-serif;
+  font-size: 0.875rem;
+  font-weight: 300;
+  color: #4386bf;
+  padding-top: 0.25rem;
+}
+
+.buttons {
+  padding-top: 1.31rem;
+
+}
+
+.actions-btn {
+  font-family: RobotoSlab sans-serif;
+  font-size: 0.875rem;
+  font-weight: 300;
+  color: #4386bf;
+  background-color: #fff;
+  border: none;
+  padding-right: 0.938rem;
+}
+
+.actions-btn.line {
+  border-right: solid 1px #e8e8e8;
+}
+
+.single-chart {
+  display: flex;
+  justify-content: space-between;
+}
+
+.circular-chart {
+  display: block;
+  margin: 10px 5px;
+  width: 70px;
+  height: 100px;
+}
+
+.circle-bg {
+  fill: none;
+  stroke: #eee;
+  stroke-width: 3.8;
+}
+
+.circle {
+  fill: none;
+  stroke-width: 2.8;
+  stroke-linecap: round;
+  animation: progress 1s ease-out forwards;
+}
+
+@keyframes progress {
+  0% {
+    stroke-dasharray: 0 100;
+  }
+}
+
+.circular-chart.blue .circle {
+  stroke: #3c9ee5;
+}
+.percentage {
+  display: flex;
+  align-items: center;
+  padding-left: 1.313rem;
+  font-family: Montserrat sans-serif;
+  font-size: 2rem;
+}
+
+.completed {
+  padding-left: 1.313rem;
+  opacity: 0.5;
+  font-family: Montserrat sans-serif;
+  font-size: 0.875rem; 
+}
+
+.currentchapter {
+  padding-left: -20px;
+}
+
+.thechapter {
+  margin: 0.438rem 2.813rem 0.25rem 3.688rem;
+  font-family: RobotoSlab sans-serif;
+  font-size: 1rem;
+  font-weight: 300;
+}
+
+.updateprogress {
+  width: 11.5rem;
+  height: 2.063rem;
+  margin: 0.75rem 0 0.563rem 2.488rem;
+  padding: 0.438rem 1.188rem 0.5rem 1.375rem;
+  border-radius: 3px;
+  background-color: #0290ff;
+  border: none;
+  
+}
+
+.progresstxt {
+  color: #fff;
+  font-family: RobotoSlab sans-serif;
+  font-size: 0.913rem;
+  font-weight: 300;
+
 }
